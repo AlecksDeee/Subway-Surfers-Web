@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Subway Surfers Style Changer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background: #002B50;
+            font-family: Torus, Arial, Helvetica, sans-serif;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        @font-face {
+            font-family: Torus;
+            src:
+                url('./fonts/torus-bold-webfont.woff2') format('woff2'),
+                url('//a.poki.com/fonts/torus-bold-webfont.woff') format('woff');
+            font-style: bold;
+            font-weight: 700;
+        }
+
+        h1, select, button {
+            margin: 6vh 0;
+            border-radius: 10px;
+        }
+
+        select, button {
+            width: 10%;
+            height: 5%;
+            margin: 0;
+        }
+
+        /* Стиль для отображения иконки */
+        #cityIcon {
+            display: none;
+            margin-top: 10px; /* Небольшой отступ между иконкой и кнопкой Play */
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Choose Subway Surfers city style</h1>
+    <select id="citySelect">
+        <option value="choose-city-style">Choose city style</option>
+        <option value="london">London</option>
+        <option value="beijing">Beijing</option>
+        <option value="zurich">Zurich</option>
+        <option value="sanfrancisco">San Francisco</option>
+        <option value="neworleans">New Orleans</option>
+        <option value="berlin">Berlin</option>
+        <option value="saintpetersburg">Saint Petersburg</option>
+        <option value="monaco">Monaco</option>
+        <option value="houston">Houston</option>
+        <option value="havana">Havana</option>
+    </select>
+
+    <button id="goButton">Play</button>
+
+    <img id="cityIcon" src="" alt="City Icon">
+
+    <script>
+        var citySelect = document.getElementById("citySelect");
+        var goButton = document.getElementById("goButton");
+        var cityIcon = document.getElementById("cityIcon");
+
+        citySelect.addEventListener("change", function () {
+            var selectedCity = citySelect.value;
+            var iconPath = `./games/sf-${selectedCity}/4399.png`;
+            cityIcon.src = iconPath;
+            cityIcon.style.display = "block";
+        });
+
+        goButton.addEventListener("click", function () {
+            var selectedCity = citySelect.value;
+            var link = `./games/sf-${selectedCity}/index.html`;
+            window.location.href = link;
+        });
+    </script>
+</body>
+</html>
