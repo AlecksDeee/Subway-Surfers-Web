@@ -14,8 +14,14 @@ Web version of the game Subway Surfers with style changer that can be played fro
 ![sf-beijing](https://github.com/AlecksDeee/Subway-Surfers-Web/blob/main/games/sf-sanfrancisco/4399.png?raw=true)
 ![sf-beijing](https://github.com/AlecksDeee/Subway-Surfers-Web/blob/main/games/sf-zurich/4399.png?raw=true)
 
-# Set-up
+# Local Set-up
 1. Download the source
 2. Open up the `host.py` file
+3. Follow the localhost link
+4. Done!
+
+# Codespaces Set-up
+1. Make a codespace workspace
+2. In terminal write `python host.py`
 3. Follow the localhost link
 4. Done!
